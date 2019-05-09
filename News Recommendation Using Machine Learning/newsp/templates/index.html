@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Title -->
+    <title>The News Paper - News &amp</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="{{url_for('static',filename="img/core-img/favicon.ico")}}">
+
+    <!-- Core Stylesheet -->
+    <link rel="stylesheet" href="{{url_for('static',filename="style.css")}}">
+</head>
+
+<body>
+    <!-- ##### Header Area Start ##### -->
+    <header class="header-area">
+        <!-- Top Header Area -->
+        <div class="top-header-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="top-header-content d-flex align-items-center justify-content-between">
+                            <!-- Logo -->
+                            <div class="logo">
+                                <a href="index.html"><img src="https://image.flaticon.com/icons/png/512/21/21601.png" height = '42' width = '124' alt=""></a>
+                            </div>
+
+                            <!-- Login Search Area -->
+                            <div class="login-search-area d-flex align-items-center">
+                                <!-- Login -->
+                                <!-- <div class="login d-flex">
+                                    <a href="#">Login</a>
+                                    <a href="#">Register</a>
+                                </div> -->
+                                <!-- Search Form -->
+                                <div class="search-form">
+                                    <form action="#" method="post">
+                                        <input type="search" name="search" class="form-control" placeholder="Search">
+                                        <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navbar Area -->
+        <div class="newspaper-main-menu" id="stickyMenu">
+            <div class="classy-nav-container breakpoint-off">
+                <div class="container">
+                    <!-- Menu -->
+                    <nav class="classy-navbar justify-content-between" id="newspaperNav">
+
+                        <!-- Logo -->
+                        <div class="logo">
+                            <a href="/"><img src="https://image.flaticon.com/icons/png/512/21/21601.png" width ='42',height ='42' alt=""></a>
+                        </div>
+
+                        <!-- Navbar Toggler -->
+                        <div class="classy-navbar-toggler">
+                            <span class="navbarToggler"><span></span><span></span><span></span></span>
+                        </div>
+
+                        <!-- Menu -->
+                        <div class="classy-menu">
+
+                            <!-- close btn -->
+                            <div class="classycloseIcon">
+                                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                            </div>
+
+                            <!-- Nav Start -->
+                            <div class="classynav">
+                                <ul>
+                                    <li class="active"><a href="/">Home</a></li>
+                                    <li><a href="/Trending">Trending News</a></li>
+                                    <li><a href="/Politics">Politics</a></li>
+                                    <li><a href="/Business">Business</a></li>
+                                    <li><a href="/Technology">Technology</a></li>
+                                    <li><a href="/Entertainment">Entertainment</a></li>
+                                    <li><a href="/Sports">Sports</a></li>
+                                    <li><a href="/World">World</a></li>
+                                    <li><a href="contact.html">Contact</a></li>
+                                </ul>
+                            </div>
+                            <!-- Nav End -->
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ##### Header Area End ##### -->
+
+    <!-- ##### Hero Area Start ##### -->
+    <div class="hero-area">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-12 col-lg-8">
+                <!-- Breaking News Widget -->
+                <div class="breaking-news-area d-flex align-items-center">
+                    <div class="news-title">
+                        <p>Breaking News</p>
+                    </div>
+                    <div id="breakingNewsTicker" class="ticker">
+                        <ul>
+                            <li><a href="#">{{Trending_news[0][0]}}</a></li>
+                            <li><a href="#">{{Trending_news[0][1]}}.</a></li>
+                            <li><a href="#">{{Trending_news[0][2]}}</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Breaking News Widget -->
+                <div class="breaking-news-area d-flex align-items-center mt-15">
+                    <div class="news-title title2">
+                        <p>International</p>
+                    </div>
+                    <div id="internationalTicker" class="ticker">
+                        <ul>
+                            <li><a href="#">{{Trending_news[0][0]}}</a></li>
+                            <li><a href="#">{{Trending_news[0][1]}}</a></li>
+                            <li><a href="#">{{Trending_news[0][2]}}</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hero Add -->
+            <div class="col-12 col-lg-4">
+                <div class="hero-add">
+                    <a href="#"><img src="img/bg-img/hero-add.gif" alt=""></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <!-- ##### Hero Area End ##### -->
+
+    <!-- ##### Featured Post Area Start ##### -->
+    <div class="featured-post-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-6 col-lg-8">
+                  <div class="section-heading">
+                      <h6>Trending News</h6>
+                  </div>
+
+                    <div class="row">
+                      {% for i in length%}
+
+                        <div class="col-12 col-lg-4">
+                          <div class="single-blog-post featured-post-2">
+                            <div class="post-thumb">
+                                <a href="recommendation.html/Trending/{{i}}"><img src={{Trending_news[2][i]}} alt=""></a>
+                            </div>
+                            <div class="post-data">
+                                <a href="recommendation.html/Trending/{{i}}" class="post-title">
+                                    <h6>{{Trending_news[0][i]}}</h6>
+                                </a>
+                                <div class="post-meta">
+                                    <p class="post-author">By <a href={{Trending_news[5][i]}}>{{Trending_news[4][i]}}</a></p>
+                                    <p class="post-excerp">{{Trending_news[1][i]}}<br><b>Published on:</b> <span>{{Trending_news[3][i]}}</p>
+
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+                      {%endfor%}
+
+                    </div>
+                </div>
+
+                <div class="col-12 col-lg-4">
+                  <div class="section-heading">
+                      <h6>Categories</h6>
+                  </div>
+
+                    <!-- Single Featured Post -->
+                    <div class="single-blog-post small-featured-post d-flex">
+                        <div class="post-thumb">
+                            <a href="/Business"><img src={{Business_news[2][0]}} alt=""></a>
+                        </div>
+                        <div class="post-data">
+                            <a href="/Business" class="post-catagory">Business</a>
+                            <div class="post-meta">
+                                <a href="/Business" class="post-title">
+                                    <h6>{{Business_news[0][0]}}.</h6>
+                                </a>
+                                <p class="post-date">Published on: <span>{{Business_news[3][0]}}</span></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Single Featured Post -->
+                    <div class="single-blog-post small-featured-post d-flex">
+                        <div class="post-thumb">
+                            <a href="/Entertainment"><img src={{Entertainment_news[2][0]}} alt=""></a>
+                        </div>
+                        <div class="post-data">
+                            <a href="/Entertainment" class="post-catagory">Entertainment</a>
+                            <div class="post-meta">
+                                <a href="/Entertainment" class="post-title">
+                                    <h6>{{Entertainment_news[0][0]}}</h6>
+                                </a>
+                                <p class="post-date">Published on: <span>{{Entertainment_news[3][0]}}</span></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Single Featured Post -->
+                    <div class="single-blog-post small-featured-post d-flex">
+                        <div class="post-thumb">
+                            <a href="/Politics"><img src={{Politics_news[2][0]}} alt=""></a>
+                        </div>
+                        <div class="post-data">
+                            <a href="/Politics" class="post-catagory">Politics</a>
+                            <div class="post-meta">
+                                <a href="/Politics" class="post-title">
+                                    <h6>{{Politics_news[0][0]}}</h6>
+                                </a>
+                                <p class="post-date">Published on: <span>{{Politics_news[3][0]}}</span></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Single Featured Post -->
+                    <div class="single-blog-post small-featured-post d-flex">
+                        <div class="post-thumb">
+                            <a href="/Sports"><img src={{Sports_news[2][0]}} alt=""></a>
+                        </div>
+                        <div class="post-data">
+                            <a href="/Sports" class="post-catagory">Sport</a>
+                            <div class="post-meta">
+                                <a href="/Sports" class="post-title">
+                                    <h6>{{Sports_news[0][0]}}</h6>
+                                </a>
+                                <p class="post-date">Published on: <span>{{Sports_news[3][0]}}</span></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Single Featured Post -->
+                    <div class="single-blog-post small-featured-post d-flex">
+                        <div class="post-thumb">
+                            <a href="/Technology"><img src={{Technology_news[2][0]}} alt=""></a>
+                        </div>
+                        <div class="post-data">
+                            <a href="/Technology" class="post-catagory">Technology</a>
+                            <div class="post-meta">
+                                <a href="/Technology" class="post-title">
+                                    <h6>{{Technology_news[0][0]}}</h6>
+                                </a>
+                                <p class="post-date">Published on: <span>{{Technology_news[3][0]}}</span></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- <div class="col-12 col-md-5 col-lg-3"> -->
+                    <br><br>
+                    <div class="section-heading">
+                        <h6>World News</h6>
+                    </div>
+
+                    {% for i in  world_length%}
+                    <div class="single-blog-post style-2">
+                        <div class="post-thumb">
+                            <a href="recommendation.html/World/{{i}}"><img src={{World_news[2][i]}} alt=""></a>
+                        </div>
+                        <div class="post-data">
+                            <a href="recommendation.html/World/{{i}}" class="post-title">
+                                <h6>{{World_news[0][i]}}</h6>
+                            </a>
+                            <div class="post-meta">
+                                <div class="post-date">Published on: <span>{{World_news[3][i]}}</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    {%endfor%}
+                </div>
+            </div>
+        </div>
+
+
+
+    <!-- ##### Featured Post Area End ##### -->
+
+
+    <!-- ##### Editorial Post Area End ##### -->
+
+    <!-- ##### Footer Add Area Start ##### -->
+    <!-- <div class="footer-add-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="footer-add">
+                        <a href="#"><img src="img/bg-img/footer-add.gif" alt=""></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <!-- ##### Footer Add Area End ##### -->
+
+    <!-- ##### Footer Area Start ##### -->
+    <footer class="footer-area">
+
+        <!-- Main Footer Area -->
+        <div class="main-footer-area">
+            <div class="container">
+                <div class="row" align='center'>
+
+                    <!-- Footer Widget Area -->
+                    <div class="col-12">
+                        <div class="footer-widget-area mt-80">
+                            <!-- Footer Logo -->
+                            <!-- <div class="footer-logo">
+                                <a href="index.html"><img src="img/core-img/logo.png" alt=""></a>
+                            </div> -->
+                            <!-- List -->
+                            <ul class="list">
+                                <h4 class="widget-title">Contact: </h4>
+                                <li><a href="mailto:rahul77349@gmail.com">rahul77349@gmail.com</a></li>
+                                <li><a href="tel:+8005510834">+8005510834</a></li>
+                                <!-- <li><a href="http://.com">www.yoursitename.com</a></li> -->
+                            </ul>
+                        </div>
+                    </div>
+
+
+                <!-- Bottom Footer Area -->
+                <div class="bottom-footer-area">
+                    <div class="container h-100">
+                        <div class="row h-100 align-items-center">
+                            <div class="col-12">
+                                <!-- Copywrite -->
+                                <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+        Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved</a>
+        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+    <!-- ##### Footer Area Start ##### -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+        <!-- All Plugins js -->
+        <script src="{{url_for('static',filename='js/plugins/plugins.js')}}"></script>
+        <!-- Active js -->
+        <script src="{{url_for('static',filename='js/active.js')}}"></script>
+
+
+</body>
+
+</html>
