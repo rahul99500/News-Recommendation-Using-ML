@@ -3,7 +3,7 @@ This is a News Website which uses machine learning to recommend the news when a 
 
 step1. extract the bbc dataset in 'dataset' folder
 
-step2. pip install requirements.txt
+step2. pip install -r requirements.txt
 
 step3. change the current directory to the newsp directory
 
