@@ -1,4 +1,5 @@
-# News-Recommendation-Using-ML
+# News-Recommendation-Using-Machine Learning
+
 This is a News Website which uses machine learning to recommend the news when a user clicks on any news.
 
 step1. extract the bbc dataset in 'dataset' folder
