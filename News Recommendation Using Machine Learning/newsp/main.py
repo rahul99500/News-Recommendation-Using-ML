@@ -31,6 +31,9 @@ from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.feature_extraction.text import TfidfVectorizer
 from nltk.corpus import stopwords
 
+
+from datetime import datetime, timedelta
+
 import time
 import os
 import random
@@ -290,8 +293,8 @@ Technology_news = [Technology_titles,Technology_contents,Technology_image_urls,T
 
 js = newsapi.get_everything(q='politics',
                                       sources='the-times-of-india',
-                                      from_param='2019-05-04',
-                                      to='2019-05-08',
+                                      from_param=datetime.strftime(datetime.now() - timedelta(10), '%Y-%m-%d'),
+                                      to=datetime.strftime(datetime.now() - timedelta(1), '%Y-%m-%d'),
                                       language='en',
                                       sort_by='relevancy',
                                       page=2)
