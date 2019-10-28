@@ -2,11 +2,15 @@
 
 This is a News Website which uses machine learning to recommend the news when a user clicks on any news.
 
-step1. extract the bbc dataset in 'dataset' folder
+step0. download / clone the project.
 
-step2. pip install -r requirements.txt
+step1. extract the bbc dataset which is inside the 'dataset' folder
 
-step3. change the current directory to the newsp directory
+step2. now type the following command to install all the required packages listed in "requirements.txt" file.
+
+>> pip install -r requirements.txt
+
+step3. change the current directory to the "newsp" directory
 
 step4. type the following commands:
 
