@@ -14,7 +14,7 @@ step3. change the current directory to the "newsp" directory
 
 step4. type the following commands:
 
->> set FLASK_APP = main.py
+>> set FLASK_APP = main
 
 >> flask run
 
